@@ -1,0 +1,36 @@
+public class Main
+{
+  public static void main (String[]args)
+  {
+
+    int i = 2;
+    boolean isprime= true;
+    
+    int n = 37;
+    isprime=checkPrime(n, i);
+    
+    String result = isprime ? "Prime":"not Prime";
+    System.out.println(n + " is : "+ result); 
+
+  }
+
+
+  static Boolean checkPrime(int n, int i)
+{
+    // 0, 1 and negative numbers are not prime
+    if (n < 2)
+        return false;
+
+    // if this satisfies then its prime as we
+    // have completed recursion from 2 to n
+    if (i == n)
+        return true;
+
+    // Base cases
+    if (n % i == 0)
+        return false;
+
+    i += 1;
+    return checkPrime(n, i);
+}
+}
